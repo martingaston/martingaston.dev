@@ -1,1 +1,29 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  grid-row-gap: 1rem;
+  min-height: 100vh;
+}
 
+.container--header {
+  grid-area: header;
+}
+
+.container--main {
+  grid-area: main;
+}
+
+.container--footer {
+  grid-area: footer;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  padding: 2rem;
+}

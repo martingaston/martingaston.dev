@@ -12,12 +12,15 @@ exports.render = function (data) {
     <link rel="stylesheet" href="/css/styles.css">
     <title>${data.title}</title>
   </head>
-  <body>
+  <body class="container">
     ${render(html`<${App} data=${data} />`)}
   </body>
 </html>`;
 };
 
 const App = ({ data }) =>
-  html`${html([data.content])}`;
-
+  html`
+    <header class="container--header header">header</header>
+    <main class="container--main main">${html([data.content])}</main>
+    <footer class="container--footer footer">footer</footer>
+  `;
