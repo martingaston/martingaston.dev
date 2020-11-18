@@ -1,3 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: hsl(180, 1.4%, 13.5%);
+  --text: hsl(120, 25%, 95.3%);
+  --line-height: 1.5;
+
+  --scale: 1.25;
+
+  --size-minus-three: calc(var(--size-minux-two) / var(--scale));
+  --size-minus-two: calc(var(--size-minus-one) / var(--scale));
+  --size-minus-one: calc(var(--size-six) / var(--scale));
+  --size-six: 1.5rem;
+  --size-five: calc(var(--size-six) * var(--scale));
+  --size-four: calc(var(--size-five) * var(--scale));
+  --size-three: calc(var(--size-four) * var(--scale));
+  --size-two: calc(var(--size-three) * var(--scale));
+  --size-one: calc(var(--size-two) * var(--scale));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--size-one);
+}
+
+h2 {
+  font-size: var(--size-two);
+}
+
+h3 {
+  font-size: var(--size-three);
+}
+
+h4 {
+  font-size: var(--size-four);
+}
+
+h5 {
+  font-size: var(--size-five);
+}
+
+h6,
+p {
+  font-size: var(--size-six);
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Source Serif Pro", serif;
+}
+
 .container {
   display: grid;
   grid-template-rows: auto 1fr auto;
