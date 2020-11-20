@@ -88,7 +88,7 @@ body {
 }
 
 .header {
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -113,4 +113,22 @@ body {
 
 .footer {
   padding: 2rem;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-list--item {
+  margin-left: 1rem;
+}
+
+.footer-list--icon {
+  height: var(--size-five);
+  fill: var(--text);
 }
