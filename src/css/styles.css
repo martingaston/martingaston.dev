@@ -2,24 +2,40 @@
 
 * {
   box-sizing: border-box;
+  line-height: var(--line-height);
 }
 
 :root {
-  --background: hsl(180, 1.4%, 13.5%);
-  --text: hsl(120, 25%, 95.3%);
-  --line-height: 1.5;
-
   --scale: 1.25;
+  --line-height: 1.5;
 
   --size-minus-three: calc(var(--size-minux-two) / var(--scale));
   --size-minus-two: calc(var(--size-minus-one) / var(--scale));
   --size-minus-one: calc(var(--size-six) / var(--scale));
-  --size-six: 1.5rem;
+  --size-six: 1rem;
   --size-five: calc(var(--size-six) * var(--scale));
   --size-four: calc(var(--size-five) * var(--scale));
   --size-three: calc(var(--size-four) * var(--scale));
   --size-two: calc(var(--size-three) * var(--scale));
   --size-one: calc(var(--size-two) * var(--scale));
+
+  --aquamarine: hsl(151, 100%, 80%);
+  --eerie-black: hsl(180, 2%, 14%);
+  --onyx: hsl(180, 2%, 20%);
+  --battleship-grey: hsl(180, 2%, 53%);
+  --cultured: hsl(0, 0%, 96%);
+  --amaranth-pink: hsl(340, 100%, 80%);
+
+  --background: var(--eerie-black);
+  --text: var(--cultured);
+  --primary: var(--aquamarine);
+  --secondary: var(--amaranth-pink);
+}
+
+@media (min-width: 450px) {
+  :root {
+    --size-six: 1.5rem;
+  }
 }
 
 h1,
@@ -93,6 +109,76 @@ body {
   justify-content: space-between;
 }
 
+.main {
+  width: 100%;
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-row-gap: 1.5rem;
+  grid-template-columns:
+    [breakout-start] 1fr
+    [content-start] minmax(40ch, 80ch)
+    [content-end] 1fr
+    [breakout-end];
+}
+
+.main a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
+  text-decoration-thickness: 0.1em;
+  transition: all 100ms ease-in-out;
+}
+
+.main a:hover {
+  background: var(--onyx);
+  text-decoration-color: var(--amaranth-pink);
+}
+
+.main > * {
+  grid-column: content;
+  word-wrap: break-word;
+}
+
+.main > p:first-of-type::first-letter {
+  color: var(--primary);
+  text-transform: uppercase;
+  float: left;
+  font-size: var(--size-one);
+  font-weight: 700;
+  margin: 0.2em 0.1em 0.1em 0;
+  line-height: 0.5;
+}
+
+/* https://aj-foster.com/2015/tombstone/ */
+.main > :last-child::after {
+  color: var(--primary);
+  background: currentColor;
+  content: "";
+  display: block;
+  float: right;
+  position: relative;
+  height: 1em;
+  margin-left: 1em;
+  width: 0.5em;
+}
+
+.main--post-title {
+  text-align: center;
+  color: var(--primary);
+  grid-column: breakout;
+  font-size: var(--size-one);
+}
+
+.main--post-info {
+  text-align: center;
+  color: var(--battleship-grey);
+  grid-column: breakout;
+  font-size: var(--size-minus-one);
+}
+
 #mugshot {
   shape-rendering: geometricPrecision;
   height: var(--size-three);
@@ -107,12 +193,41 @@ body {
   font-size: var(--size-six);
 }
 
-.topnav--item {
+.topnav--item,
+.topnav--item-selected {
   margin-left: 1.5rem;
+}
+
+.topnav--item a,
+.topnav--item-selected a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topnav--item::after {
+  content: "";
+  display: block;
+  border-top: 5px solid var(--primary);
+  height: 5px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 150ms ease-in-out;
+}
+
+.topnav--item-selected::after {
+  content: "";
+  display: block;
+  border-top: 5px solid var(--secondary);
+  height: 5px;
+}
+
+.topnav--item:hover::after {
+  transform: scaleX(1);
 }
 
 .footer {
   padding: 2rem;
+  border-top: 1px solid var(--onyx);
 }
 
 .footer-list {
@@ -130,5 +245,20 @@ body {
 
 .footer-list--icon {
   height: var(--size-five);
+  fill: var(--battleship-grey);
+  transition: all 100ms ease-in;
+}
+
+.footer-list--icon:hover {
   fill: var(--text);
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.divider {
+  fill: var(--battleship-grey);
+  width: 18rem;
+  margin: 0.5rem auto;
 }
