@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Serif+Pro:wght@300;400;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -142,6 +142,52 @@ body {
   word-wrap: break-word;
 }
 
+.main blockquote {
+  border-left: 0.25em solid var(--primary);
+  padding-left: calc(var(--scale) * 1rem);
+  font-size: var(--size-six);
+  font-style: italic;
+  margin: 1.5rem;
+  margin-left: calc(1.5rem - 0.25em);
+}
+
+.main ul,
+.main ol {
+  margin: 0 0.5rem;
+  padding-left: 1em;
+  list-style: none;
+}
+
+.main li {
+  font-size: var(--size-six);
+  line-height: var(--line-height);
+  margin-top: 0.5em;
+}
+
+/* https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+.main ol li {
+  counter-increment: li;
+}
+
+.main ol li::before {
+  content: counter(li);
+  color: var(--primary);
+  direction: rtl;
+  text-align: right;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.45em;
+}
+
+.main ul li::before {
+  content: "•";
+  color: var(--primary);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
 .main > p:first-of-type::first-letter {
   color: var(--primary);
   text-transform: uppercase;
@@ -167,7 +213,6 @@ body {
 
 .main--post-title {
   text-align: center;
-  color: var(--primary);
   grid-column: breakout;
   font-size: var(--size-one);
 }
@@ -177,6 +222,7 @@ body {
   color: var(--battleship-grey);
   grid-column: breakout;
   font-size: var(--size-minus-one);
+  font-weight: 300;
 }
 
 #mugshot {
