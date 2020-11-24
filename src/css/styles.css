@@ -153,14 +153,17 @@ body {
 
 .main ul,
 .main ol {
-  margin: 0 0.5rem;
-  padding-left: 1em;
+  margin: 0;
+  padding: 0 1em;
   list-style: none;
 }
 
 .main li {
   font-size: var(--size-six);
   line-height: var(--line-height);
+}
+
+.main li:not(:first-child) {
   margin-top: 0.5em;
 }
 
@@ -170,22 +173,21 @@ body {
 }
 
 .main ol li::before {
-  content: counter(li);
+  content: counter(li) ".";
   color: var(--primary);
-  direction: rtl;
-  text-align: right;
   display: inline-block;
-  width: 1em;
-  margin-left: -1.5em;
-  margin-right: 0.45em;
+  vertical-align: center;
+  width: 1.5em;
+  font-weight: 300;
+  font-size: var(--size-minus-one);
 }
 
 .main ul li::before {
-  content: "•";
+  content: "○";
   color: var(--primary);
   display: inline-block;
   width: 1em;
-  margin-left: -1em;
+  font-weight: 300;
 }
 
 .main > p:first-of-type::first-letter {
