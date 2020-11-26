@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Serif+Pro:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&family=Source+Serif+Pro:wght@300;400;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -147,6 +147,7 @@ body {
   padding-left: calc(var(--scale) * 1rem);
   font-size: var(--size-six);
   font-style: italic;
+  font-weight: 300;
   margin: 1.5rem;
   margin-left: calc(1.5rem - 0.25em);
 }
@@ -215,14 +216,13 @@ body {
 
 .main--post-title {
   text-align: center;
-  grid-column: breakout;
   font-size: var(--size-one);
+  margin: 1rem;
 }
 
 .main--post-info {
   text-align: center;
   color: var(--battleship-grey);
-  grid-column: breakout;
   font-size: var(--size-minus-one);
   font-weight: 300;
 }
@@ -301,12 +301,27 @@ body {
   fill: var(--text);
 }
 
-pre {
-  white-space: pre-wrap;
-}
-
 .divider {
   fill: var(--battleship-grey);
   width: 18rem;
   margin: 0.5rem auto;
+}
+
+.main pre {
+  grid-column: breakout;
+  white-space: pre-wrap;
+}
+
+.main code {
+  font-family: "Source Code Pro";
+  line-height: inherit;
+  background: var(--onyx);
+  color: var(--aquamarine);
+  padding: 0.1em 0.3em;
+  border-radius: 0.1em;
+}
+
+.main pre > code {
+  font-family: "Source Code Pro";
+  line-height: inherit;
 }

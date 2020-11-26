@@ -1,6 +1,7 @@
 // _includes/post.11ty.js
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
+const { h } = require("preact");
 
 exports.render = function (data) {
   return `<!doctype html>
@@ -10,6 +11,7 @@ exports.render = function (data) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/prism-theme.css">
     <title>${data.title}</title>
   </head>
   <body class="container">
@@ -18,16 +20,30 @@ exports.render = function (data) {
 </html>`;
 };
 
-const App = ({ data }) =>
-  html`
+const Content = ({ content }) => {
+  return h(
+    "article",
+    {
+      class: "main",
+      dangerouslySetInnerHTML: {
+        __html: content,
+      },
+    },
+    ""
+  );
+};
+
+const App = ({ data }) => {
+  return html`
     <header class="container--header header"><${Nav} /></header>
-    <main class="container--main main">
+    <main class="container--main">
       <${Title} title=${data.title} />
       <${Info} />
-      ${html([data.content])}
+      <${Content} content=${data.content} />
     </main>
     <footer class="container--footer footer"><${Footer} /></footer>
   `;
+};
 
 const Title = ({ title }) => html`<h1 class="main--post-title">${title}</h1>`;
 
@@ -44,8 +60,10 @@ const Nav = () =>
   `;
 
 const Info = () =>
-  html`<h6 class="main--post-info">November 22, 2020</h6>
-    <${Divider} />`;
+  html`<div class="main--post-info">
+    <h6 class="main--post-info">November 22, 2020</h6>
+    <${Divider} />
+  </div>`;
 
 const Logo = () =>
   html`

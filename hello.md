@@ -54,7 +54,7 @@ Nam sagittis ex a odio mattis mattis. Interdum et malesuada fames ac ante ipsum 
 
 ## Subheading 4
 
-```javascript
+```js/1-3,5
 function fibonacci(number) {
   if (number <= 1) {
     return 1;
