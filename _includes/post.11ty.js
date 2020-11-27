@@ -2,6 +2,8 @@
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
 const { h } = require("preact");
+const { format } = require("date-fns");
+const readingTime = require("reading-time");
 
 exports.render = function (data) {
   return `<!doctype html>
@@ -38,7 +40,7 @@ const App = ({ data }) => {
     <header class="container--header header"><${Nav} /></header>
     <main class="container--main">
       <${Title} title=${data.title} />
-      <${Info} />
+      <${Info} date=${data.page.date} content=${data.content} />
       <${Content} content=${data.content} />
     </main>
     <footer class="container--footer footer"><${Footer} /></footer>
@@ -59,9 +61,11 @@ const Nav = () =>
     </nav>
   `;
 
-const Info = () =>
+const Info = ({ date, content }) =>
   html`<div class="main--post-info">
-    <h6 class="main--post-info">November 22, 2020</h6>
+    <h6 class="main--post-info">
+      ${format(date, "MMMM dd, y")} ○ ${readingTime(content).text}
+    </h6>
     <${Divider} />
   </div>`;
 
