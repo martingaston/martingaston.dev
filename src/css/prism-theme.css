@@ -21,8 +21,8 @@
 }
 
 .main pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  margin: 0;
+  padding: 1rem;
   overflow: auto;
   background: #323434;
 }
@@ -97,7 +97,8 @@
 .main .highlight-line-active {
   background: #232424;
   color: inherit;
-  margin: 0 -1em;
+  margin: 0;
+  margin-left: -1rem;
   padding: 0.125em;
   box-shadow: inset 5px 0 0 #ff99bb;
   z-index: 0;

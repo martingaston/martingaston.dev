@@ -153,7 +153,7 @@ const Footer = () => html`<div>
 </div>`;
 
 const Divider = () => html`<svg
-  class="divider"
+  class="main--divider"
   version="1.1"
   viewBox="0 0 46.421 3.5438"
   xmlns="http://www.w3.org/2000/svg"

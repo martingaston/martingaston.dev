@@ -113,14 +113,15 @@ body {
   width: 100%;
   max-width: 54rem;
   margin: 0 auto;
-  padding: 1rem;
   display: grid;
   grid-auto-rows: auto;
   grid-row-gap: 1.5rem;
   grid-template-columns:
     [breakout-start] 1fr
+    [padding-start] 1rem
     [content-start] minmax(40ch, 80ch)
     [content-end] 1fr
+    [padding-end] 1rem
     [breakout-end];
 }
 
@@ -189,6 +190,12 @@ body {
   display: inline-block;
   width: 1em;
   font-weight: 300;
+}
+
+.main img {
+  grid-column: breakout;
+  max-width: 100%;
+  height: auto;
 }
 
 .main > p:first-of-type::first-letter {
@@ -301,10 +308,10 @@ body {
   fill: var(--text);
 }
 
-.divider {
+.main--divider {
   fill: var(--battleship-grey);
   width: 18rem;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
 }
 
 .main pre {
