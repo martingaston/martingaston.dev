@@ -26,7 +26,7 @@ const Content = ({ content }) => {
   return h(
     "article",
     {
-      class: "main",
+      class: "article content",
       dangerouslySetInnerHTML: {
         __html: content,
       },
@@ -42,10 +42,25 @@ const App = ({ data }) => {
       <${Title} title=${data.title} />
       <${Info} date=${data.page.date} content=${data.content} />
       <${Content} content=${data.content} />
+      <${OtherPosts} />
     </main>
     <footer class="container--footer footer"><${Footer} /></footer>
   `;
 };
+
+const OtherPosts = () =>
+  html`<section class="content afterpost">
+    <h6 class="afterpost--title">Keep That Content Train Rolling...</h6>
+    <ul class="afterpost--list">
+      <li class="afterpost--list-item">
+        <time>01 Dec 2020</time><a href="/first-link">One Post</a>
+      </li>
+      <li class="afterpost--list-item">
+        <time>31 Jan 2019</time>
+        <a href="/second-link">Second Post</a>
+      </li>
+    </ul>
+  </section>`;
 
 const Title = ({ title }) => html`<h1 class="main--post-title">${title}</h1>`;
 
