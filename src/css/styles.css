@@ -355,8 +355,9 @@ body {
 }
 
 .afterpost--list-item time {
-  color: var(--onyx);
+  color: var(--battleship-grey);
   width: 8.5rem;
+  font-weight: 300;
 }
 
 .afterpost--list-item a {
