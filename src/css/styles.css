@@ -224,14 +224,18 @@ body {
 .main--post-title {
   text-align: center;
   font-size: var(--size-one);
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .main--post-info {
   text-align: center;
+}
+
+.main--post-info-date {
   color: var(--battleship-grey);
-  font-size: var(--size-minus-one);
   font-weight: 300;
+  font-size: var(--size-minus-one);
+  margin: 0.5rem;
 }
 
 #mugshot {
@@ -311,7 +315,7 @@ body {
 .main--divider {
   fill: var(--battleship-grey);
   width: 18rem;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
 }
 
 .article pre {
@@ -368,4 +372,31 @@ body {
 
 .afterpost--list-item a:hover {
   color: var(--aquamarine);
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.tags--list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+}
+
+.tags--list-item {
+  list-style: none;
+  margin-top: 0;
+  margin-right: 0.5em;
+  font-size: var(--size-minus-two);
+  text-transform: lowercase;
+  padding: 0.125em 0.5em;
+  border-radius: 0.25em;
+  color: var(--battleship-grey);
+  font-weight: 600;
+  background: var(--onyx);
 }

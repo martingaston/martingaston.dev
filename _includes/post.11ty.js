@@ -78,11 +78,20 @@ const Nav = () =>
 
 const Info = ({ date, content }) =>
   html`<div class="main--post-info">
-    <h6 class="main--post-info">
+    <h6 class="main--post-info-date">
       ${format(date, "MMMM dd, y")} ○ ${readingTime(content).text}
     </h6>
+    <${Tags} />
     <${Divider} />
   </div>`;
+
+const Tags = () => html`<section class="tags">
+  <ul class="tags--list">
+    <li class="tags--list-item">blog</li>
+    <li class="tags--list-item">markdown</li>
+    <li class="tags--list-item">TYPOGRAPHY</li>
+  </ul>
+</section>`;
 
 const Logo = () =>
   html`
