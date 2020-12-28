@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Punchy Blog Title That's Extremely Long
 ---
 
