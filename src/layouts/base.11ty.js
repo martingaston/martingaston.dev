@@ -3,7 +3,6 @@ const { render } = require("preact-render-to-string");
 const { Layout } = require("../components/Layout");
 
 exports.render = function (data) {
-  console.log(Layout);
   return `<!doctype html>
 <html lang="en">
   <head>
