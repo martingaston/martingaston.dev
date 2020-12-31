@@ -11,7 +11,6 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  console.log(data);
   return render(html`
     <${Title} title=${data.title} />
     <${Info} date=${data.page.date} content=${data.content} tags=${data.tags} />
