@@ -14,6 +14,9 @@ exports.data = {
   permalink: function (data) {
     return `blog/tags/${this.slug(data.tag)}/`;
   },
+  eleventyComputed: {
+    title: ({ tag }) => capitalise(tag),
+  },
 };
 
 function capitalise(string) {

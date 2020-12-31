@@ -1,6 +1,6 @@
 exports.data = {
   layout: "base",
-  title: "hello",
+  title: "Home",
   permalink: "index.html",
 };
 
