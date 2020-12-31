@@ -1,11 +1,11 @@
 exports.data = {
   layout: "base",
-  title: "Home",
-  permalink: "index.html",
+  title: "CV",
+  permalink: "cv/index.html",
   tags: "nav",
-  navorder: 1,
+  navorder: 5,
 };
 
 exports.render = function (data) {
-  return "<h1>index</h1>";
+  return "<h1>cv</h1>";
 };

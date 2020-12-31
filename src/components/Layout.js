@@ -6,7 +6,9 @@ const { Footer } = require("../components/Footer");
 
 const Layout = ({ data }) => {
   return html`
-    <header class="container--header header"><${Nav} /></header>
+    <header class="container--header header">
+      <${Nav} nav=${data.collections.nav} pageUrl=${data.page.url} />
+    </header>
     <${Content}
       element="main"
       classes="container--main"
