@@ -130,7 +130,7 @@ body {
   word-wrap: break-word;
 }
 
-.article a {
+.markdown a {
   color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 0.1em;
@@ -138,12 +138,12 @@ body {
   transition: all 100ms ease-in-out;
 }
 
-.article a:hover {
+.markdown a:hover {
   background: var(--onyx);
   text-decoration-color: var(--amaranth-pink);
 }
 
-.article blockquote {
+.markdown blockquote {
   border-left: 0.25em solid var(--primary);
   padding-left: calc(var(--scale) * 1rem);
   font-size: var(--size-six);
@@ -153,28 +153,28 @@ body {
   margin-left: calc(1.5rem - 0.25em);
 }
 
-.article ul,
-.article ol {
+.markdown ul,
+.markdown ol {
   margin: 0;
   padding: 0 1em;
   list-style: none;
 }
 
-.article li {
+.markdown li {
   font-size: var(--size-six);
   line-height: var(--line-height);
 }
 
-.article li:not(:first-child) {
+.markdown li:not(:first-child) {
   margin-top: 0.5em;
 }
 
 /* https://www.w3.org/Style/Examples/007/color-bullets.en.html */
-.article ol li {
+.markdown ol li {
   counter-increment: li;
 }
 
-.article ol li::before {
+.markdown ol li::before {
   content: counter(li) ".";
   color: var(--primary);
   display: inline-block;
@@ -186,17 +186,17 @@ body {
 
 /* everything about the below is heinous and must be fixed */
 
-.article ol.postlist {
+.markdown ol.postlist {
   margin: 2rem 0;
   padding: 0;
 }
 
-.article ol .postlist--title {
+.markdown ol .postlist--title {
   font-size: var(--size-four);
   margin: 0.5rem 0;
 }
 
-.article ol .postlist--info {
+.markdown ol .postlist--info {
   color: var(--battleship-grey);
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -205,34 +205,34 @@ body {
   align-items: center;
 }
 
-.article .postlist--info li {
+.markdown .postlist--info li {
   font-size: inherit;
 }
 
-.article .postlist--info li:not(:first-child) {
+.markdown .postlist--info li:not(:first-child) {
   margin: 0;
 }
 
-.article ol li.postlist--item {
+.markdown ol li.postlist--item {
   margin-bottom: 2rem;
 }
 
-.article ol li.postlist--item::before {
+.markdown ol li.postlist--item::before {
   content: none;
 }
 
-.article .postlist--info ul li::before {
+.markdown .postlist--info ul li::before {
   content: none;
 }
 
-.article ol li.postlist--item {
+.markdown ol li.postlist--item {
   counter-increment: none;
   font-size: inherit;
 }
 
 /* totally awful code stops here */
 
-.article ul li::before {
+.markdown ul li::before {
   content: "○";
   color: var(--primary);
   display: inline-block;
@@ -240,13 +240,13 @@ body {
   font-weight: 300;
 }
 
-.article img {
+.markdown img {
   grid-column: breakout;
   max-width: 100%;
   height: auto;
 }
 
-.dropcap.article > p:first-of-type::first-letter {
+.dropcap > p:first-of-type::first-letter {
   color: var(--primary);
   text-transform: uppercase;
   float: left;
@@ -257,7 +257,7 @@ body {
 }
 
 /* https://aj-foster.com/2015/tombstone/ */
-.tombstone.article > :last-child::after {
+.tombstone > :last-child::after {
   color: var(--primary);
   background: currentColor;
   content: "";
@@ -366,12 +366,12 @@ body {
   margin: 1.5rem auto;
 }
 
-.article pre {
+.markdown pre {
   grid-column: breakout;
   white-space: pre-wrap;
 }
 
-.article code {
+.markdown code {
   font-family: "Source Code Pro";
   line-height: inherit;
   background: var(--onyx);
@@ -380,7 +380,7 @@ body {
   border-radius: 0.1em;
 }
 
-.article pre > code {
+.markdown pre > code {
   font-family: "Source Code Pro";
   line-height: inherit;
 }

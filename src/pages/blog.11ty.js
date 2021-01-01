@@ -16,7 +16,7 @@ exports.data = {
 exports.render = function (data) {
   return render(
     html`<${Title} title="Blog" />
-      <article class="article content">
+      <article class="content">
         <ol class="postlist">
           ${[...data.collections.blog]
             .reverse()

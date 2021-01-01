@@ -16,7 +16,7 @@ exports.render = function (data) {
     <${Info} date=${data.page.date} content=${data.content} tags=${data.tags} />
     <${Content}
       element="article"
-      classes="article content dropcap tombstone"
+      classes="content markdown dropcap tombstone"
       content=${data.content}
     />
     <${OtherPosts} />
