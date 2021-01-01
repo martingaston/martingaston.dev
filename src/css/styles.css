@@ -184,54 +184,6 @@ body {
   font-size: var(--size-minus-one);
 }
 
-/* everything about the below is heinous and must be fixed */
-
-.markdown ol.postlist {
-  margin: 2rem 0;
-  padding: 0;
-}
-
-.markdown ol .postlist--title {
-  font-size: var(--size-four);
-  margin: 0.5rem 0;
-}
-
-.markdown ol .postlist--info {
-  color: var(--battleship-grey);
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.markdown .postlist--info li {
-  font-size: inherit;
-}
-
-.markdown .postlist--info li:not(:first-child) {
-  margin: 0;
-}
-
-.markdown ol li.postlist--item {
-  margin-bottom: 2rem;
-}
-
-.markdown ol li.postlist--item::before {
-  content: none;
-}
-
-.markdown .postlist--info ul li::before {
-  content: none;
-}
-
-.markdown ol li.postlist--item {
-  counter-increment: none;
-  font-size: inherit;
-}
-
-/* totally awful code stops here */
-
 .markdown ul li::before {
   content: "○";
   color: var(--primary);
@@ -458,4 +410,38 @@ body {
 
 .tags--list-item a:hover {
   color: var(--text);
+}
+
+.postlist {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.postlist--title {
+  margin: 0.5rem 0;
+}
+
+.postlist--link {
+  text-decoration: none;
+  color: var(--primary);
+  transition: all 100ms ease-in-out;
+}
+
+.postlist--link:hover {
+  background: var(--onyx);
+  color: var(--secondary);
+}
+
+.postlist--info {
+  color: var(--battleship-grey);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postlist--item {
+  margin-bottom: 2rem;
+  list-style-type: none;
 }

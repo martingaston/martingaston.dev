@@ -27,9 +27,9 @@ exports.render = function (data) {
 };
 
 const Post = ({ post }) => html`<li class="postlist--item">
-  <h2 class="postlist--title">
+  <h4 class="postlist--title">
     <a class="postlist--link" href=${post.url}>${post.data.title}</a>
-  </h2>
+  </h4>
   <div class="postlist--info">
     <time>${format(post.date, "MMMM dd, y")}</time>
     <${Tags} tags=${post.data.tags} />
