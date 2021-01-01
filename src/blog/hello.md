@@ -5,6 +5,8 @@ tags: ["blog", "markdown", "slug this tag", "typography"]
 
 Torem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis metus nec elit consectetur, non rhoncus augue hendrerit. Donec ac volutpat lectus, sed molestie magna. Mauris ac rhoncus ex. Nam aliquet sem tristique scelerisque ultrices. Proin hendrerit at enim eu congue. Vestibulum imperdiet risus non laoreet sodales. Suspendisse sodales eros vel nunc vulputate elementum. Sed viverra nisi vitae nibh pulvinar vehicula. Nam ac posuere nibh, eu malesuada enim.
 
+<!-- excerpt -->
+
 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklm
 
 Lorem ipsum dolor sit amet, [consectetur adipiscing elit](http://www.google.com). Aliquam sagittis metus nec elit consectetur, non rhoncus augue hendrerit. Donec ac volutpat lectus, sed molestie magna. Mauris ac rhoncus ex. Nam aliquet sem tristique scelerisque ultrices. Proin hendrerit at enim eu congue. Vestibulum imperdiet risus non laoreet sodales. Suspendisse sodales eros vel nunc vulputate elementum. Sed viverra nisi vitae nibh pulvinar vehicula. Nam ac posuere nibh, eu malesuada enim.

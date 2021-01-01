@@ -16,6 +16,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownIt(options));
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "<!-- excerpt -->",
+  });
+
   return {
     dir: {
       input: "src",

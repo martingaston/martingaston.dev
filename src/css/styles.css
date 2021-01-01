@@ -184,6 +184,54 @@ body {
   font-size: var(--size-minus-one);
 }
 
+/* everything about the below is heinous and must be fixed */
+
+.article ol.postlist {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.article ol .postlist--title {
+  font-size: var(--size-four);
+  margin: 0.5rem 0;
+}
+
+.article ol .postlist--info {
+  color: var(--battleship-grey);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article .postlist--info li {
+  font-size: inherit;
+}
+
+.article .postlist--info li:not(:first-child) {
+  margin: 0;
+}
+
+.article ol li.postlist--item {
+  margin-bottom: 2rem;
+}
+
+.article ol li.postlist--item::before {
+  content: none;
+}
+
+.article .postlist--info ul li::before {
+  content: none;
+}
+
+.article ol li.postlist--item {
+  counter-increment: none;
+  font-size: inherit;
+}
+
+/* totally awful code stops here */
+
 .article ul li::before {
   content: "○";
   color: var(--primary);
