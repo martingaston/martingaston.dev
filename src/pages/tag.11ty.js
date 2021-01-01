@@ -9,7 +9,7 @@ exports.data = {
     data: "collections",
     size: 1,
     alias: "tag",
-    filter: ["blog"],
+    filter: ["blog", "nav", "all"],
   },
   permalink: function (data) {
     return `blog/tags/${this.slug(data.tag)}/`;
