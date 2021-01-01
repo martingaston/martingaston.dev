@@ -1,9 +1,8 @@
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
-const { format } = require("date-fns");
 
 const { Title } = require("../components/Title");
-const { Tags } = require("../components/Tags");
+const { BlogPostSummary } = require("../components/BlogPostSummary");
 
 exports.data = {
   layout: "base",
@@ -20,19 +19,8 @@ exports.render = function (data) {
         <ol class="postlist">
           ${[...data.collections.blog]
             .reverse()
-            .map((post) => html`<${Post} post=${post} />`)}
+            .map((post) => html`<${BlogPostSummary} post=${post} />`)}
         </ol>
       </article>`
   );
 };
-
-const Post = ({ post }) => html`<li class="postlist--item">
-  <h4 class="postlist--title">
-    <a class="postlist--link" href=${post.url}>${post.data.title}</a>
-  </h4>
-  <div class="postlist--info">
-    <time>${format(post.date, "MMMM dd, y")}</time>
-    <${Tags} tags=${post.data.tags} />
-  </div>
-  <p class="postlist--summary">${post.data.page.excerpt}</p>
-</li>`;

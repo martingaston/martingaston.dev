@@ -1,5 +1,6 @@
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
+const { BlogPostSummary } = require("../components/BlogPostSummary");
 
 const { Title } = require("../components/Title");
 
@@ -29,12 +30,12 @@ function capitalise(string) {
 exports.render = function (data) {
   return render(
     html`
-      <${Title} title="Posts Tagged With ${capitalise(data.tag)}" />
-      <article class="article content">
+      <${Title} title="${capitalise(data.tag)} Posts" />
+      <article class="content">
         <ul>
-          ${data.collections[data.tag].map(
-            (post) => html`<li><a href=${post.url}>${post.data.title}</a></li>`
-          )}
+          ${[...data.collections[data.tag]]
+            .reverse()
+            .map((post) => html`<${BlogPostSummary} post=${post} />`)}
         </ul>
       </article>
     `
