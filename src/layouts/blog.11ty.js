@@ -10,6 +10,12 @@ exports.data = {
   layout: "base",
 };
 
+const getOtherPosts = (data) =>
+  [...data.collections.blog]
+    .reverse()
+    .filter((post) => post.data.page.url != data.page.url)
+    .slice(0, 4);
+
 exports.render = function (data) {
   return render(html`
     <${Title} title=${data.title} />
@@ -19,6 +25,6 @@ exports.render = function (data) {
       classes="content markdown dropcap tombstone"
       content=${data.content}
     />
-    <${OtherPosts} />
+    <${OtherPosts} posts=${getOtherPosts(data)} />
   `);
 };
