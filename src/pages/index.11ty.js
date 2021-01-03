@@ -22,11 +22,11 @@ exports.render = function (data) {
       <div class="hero__content">
         <h1 class="hero__title">Hello, World!</h1>
         <p>
-          I'm a senior engineer at ${" "}<a
+          I'm a senior engineer working in London at ${" "}<a
             class="hero__link"
             href="http://www.8thlight.com"
             >8th Light</a
-          >, a global software consultancy. You can also reach me on${" "}
+          >, a super nifty software consultancy. You can also reach me on${" "}
           <a class="hero__link" href="https://www.twitter.com/squidmania">
             Twitter</a
           >,${" "}
