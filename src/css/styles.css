@@ -302,6 +302,8 @@ body {
 
 .footer-list--item {
   margin-left: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .footer-list--icon {
