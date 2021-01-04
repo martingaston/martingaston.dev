@@ -356,14 +356,17 @@ body {
 }
 
 .afterpost--list-item {
-  display: flex;
   font-size: var(--size-six);
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  column-gap: 0.75rem;
 }
 
 .afterpost--list-item time {
   color: var(--battleship-grey);
   width: 8.5rem;
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .afterpost--list-item a {
