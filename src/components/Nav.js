@@ -4,6 +4,9 @@ const { Logo } = require("./Logo");
 const sortedNav = (nav) =>
   nav.sort((a, b) => a.data.navorder - b.data.navorder);
 
+const getParent = (url) =>
+  url.split("/").filter((pathSegment) => pathSegment !== "")[0];
+
 const Nav = ({ nav, pageUrl }) => {
   return html`
     <${Logo} />
@@ -11,7 +14,8 @@ const Nav = ({ nav, pageUrl }) => {
       <ul class="topnav">
         ${sortedNav(nav).map((navItem) => {
           const isCurrent = navItem.url == pageUrl;
-          return isCurrent
+          const sameParent = getParent(navItem.url) == getParent(pageUrl);
+          return isCurrent || sameParent
             ? html`<${CurrentNavItem}
                 url=${navItem.url}
                 title=${navItem.data.title}
