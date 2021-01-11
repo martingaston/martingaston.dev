@@ -16,6 +16,7 @@ exports.render = function (data) {
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/prism-theme.css">
+    <link rel="stylesheet" href="/css/cv.css" />
     <title>${title}</title>
   </head>
   <body class="container">

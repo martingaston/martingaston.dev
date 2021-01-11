@@ -1,0 +1,22 @@
+{
+  "name": "Martin Gaston",
+  "email": "hello@martingaston.dev",
+  "social": {
+    "twitter": {
+      "name": "squidmania",
+      "url": "https://www.twitter.com/squidmania"
+    },
+    "linkedin": {
+      "name": "martingaston",
+      "url": "https://www.linkedin.com/in/martingaston"
+    },
+    "github": {
+      "name": "martingaston",
+      "url": "https://www.github.com/martingaston"
+    },
+    "kofi": {
+      "name": "martingaston",
+      "url": "https://ko-fi.com/martingaston"
+    }
+  }
+}

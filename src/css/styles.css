@@ -24,10 +24,11 @@
   --onyx: hsl(180, 2%, 20%);
   --battleship-grey: hsl(180, 2%, 53%);
   --cultured: hsl(0, 0%, 96%);
+  --gainsboro: hsl(0, 0%, 86%);
   --amaranth-pink: hsl(340, 100%, 80%);
 
   --background: var(--eerie-black);
-  --text: var(--cultured);
+  --text: var(--gainsboro);
   --primary: var(--aquamarine);
   --secondary: var(--amaranth-pink);
 }
@@ -46,6 +47,7 @@ h5,
 h6 {
   font-weight: 600;
   margin: 0;
+  color: var(--cultured);
 }
 
 p {
@@ -121,7 +123,7 @@ body {
   grid-template-columns:
     [breakout-start] 1fr
     [padding-start] 1rem
-    [content-start] minmax(40ch, 80ch)
+    [content-start] minmax(10rem, 80ch)
     [content-end] 1fr
     [padding-end] 1rem
     [breakout-end];
@@ -130,6 +132,8 @@ body {
 .content > * {
   grid-column: content;
   word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .markdown a {
@@ -294,7 +298,7 @@ body {
 .footer-list {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -551,7 +555,7 @@ body {
 
 .featured-moreposts {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   margin: 1.5rem 0;
 }
 
