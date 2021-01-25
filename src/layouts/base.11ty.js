@@ -21,5 +21,6 @@ exports.render = function (data) {
   <body class="container">
     ${render(html`<${Layout} data=${data} />`)}
   </body>
+  <!-- LAST BUILD: ${data.build.timestamp} -->
 </html>`;
 };
