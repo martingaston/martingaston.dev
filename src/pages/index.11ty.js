@@ -16,7 +16,7 @@ const getLatestPosts = (data, numberOfPosts = 5) =>
     .filter((post) => post.data.page.url != data.page.url)
     .slice(0, numberOfPosts);
 
-exports.render = function (data) {
+exports.render = function ({ author, ...data }) {
   return render(html` <header class="hero">
       <img class="hero__image" src="/assets/mg-gb.png" />
       <div class="hero__content">
@@ -24,18 +24,15 @@ exports.render = function (data) {
         <p>
           I'm a senior engineer working in London at ${" "}<a
             class="hero__link"
-            href="http://www.8thlight.com"
-            >8th Light</a
+            href=${author.employer.url}
+            >${author.employer.name}</a
           >, a super nifty software consultancy. You can also reach me on${" "}
-          <a class="hero__link" href="https://www.twitter.com/squidmania">
-            Twitter</a
+          <a class="hero__link" href=${author.social.twitter.url}>Twitter</a
           >,${" "}
-          <a class="hero__link" href="https://www.github.com/martingaston">
-            GitHub
-          </a>
+          <a class="hero__link" href=${author.social.github.url}>GitHub</a>
           ${" or "}
-          <a class="hero__link" href="mailto:hello@martingaston.dev">
-            hello@martingaston.dev
+          <a class="hero__link" href="mailto:${author.email}">
+            ${author.email}
           </a>
         </p>
       </div>

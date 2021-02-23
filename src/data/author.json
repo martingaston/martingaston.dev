@@ -1,6 +1,11 @@
 {
   "name": "Martin Gaston",
   "email": "hello@martingaston.dev",
+  "location": "London",
+  "employer": {
+    "name": "8th Light",
+    "url": "http://www.8thlight.com"
+  },
   "social": {
     "twitter": {
       "name": "squidmania",

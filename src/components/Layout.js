@@ -14,7 +14,9 @@ const Layout = ({ data }) => {
       classes="container--main"
       content=${data.content}
     />
-    <footer class="container--footer footer"><${Footer} /></footer>
+    <footer class="container--footer footer">
+      <${Footer} ...${data.author} />
+    </footer>
   `;
 };
 
