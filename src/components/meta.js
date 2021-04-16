@@ -1,3 +1,27 @@
+const createStructuredData = (data) => {
+  if (data.layout === "blog") {
+    return createPostStructuredData({
+      url: data.site.url + data.page.url,
+      headline: data.title,
+      description: data.page.excerpt,
+      author: data.author.name,
+      image: "",
+      datePublished: data.page.date,
+    });
+  }
+
+  return createWebsiteStructureData({
+    author: data.author.name,
+    bio: "",
+    url: data.site.url,
+    image: `${data.site.url}/assets/mg-gb.png`,
+    websiteName: data.site.name,
+    twitterUrl: data.author.social.twitter.url,
+    githubUrl: data.author.social.github.url,
+    linkedInUrl: data.author.social.linkedin.url,
+  });
+};
+
 const createPostStructuredData = ({
   url,
   headline,
@@ -5,7 +29,6 @@ const createPostStructuredData = ({
   author,
   image,
   datePublished,
-  dateModified,
 }) =>
   JSON.stringify({
     "@context": "https://schema.org",
@@ -22,7 +45,6 @@ const createPostStructuredData = ({
       name: author,
     },
     datePublished,
-    dateModified,
   });
 
 const createWebsiteStructureData = ({
@@ -50,4 +72,4 @@ const createWebsiteStructureData = ({
     "@context": "http://schema.org",
   });
 
-module.exports = { createPostStructuredData, createWebsiteStructureData };
+module.exports = { createStructuredData };

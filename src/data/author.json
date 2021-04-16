@@ -2,6 +2,7 @@
   "name": "Martin Gaston",
   "email": "hello@martingaston.dev",
   "location": "London",
+  "bio": "I'm a senior engineer living in London and working at 8th Light",
   "employer": {
     "name": "8th Light",
     "url": "http://www.8thlight.com"

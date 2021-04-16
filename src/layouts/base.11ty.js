@@ -1,10 +1,15 @@
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
 const { Layout } = require("../components/Layout");
+const { createStructuredData } = require("../components/meta");
 
 exports.render = function (data) {
   if (!data.title) {
     console.error(`⚠️  No title set for page: ${data.page.inputPath}`);
+  }
+
+  if (process.env.NODE_ENV === "test") {
+    console.log(data);
   }
 
   const author = data.author;
@@ -37,6 +42,10 @@ exports.render = function (data) {
     <!-- Twitter -->
     <meta name="twitter:site" content="@${author.social.twitter.name}">
     <meta name="twitter:creator" content="@${author.social.twitter.name}">
+
+    <script type="application/ld+json">
+      ${createStructuredData(data)}
+    </script>
   </head>
   <body class="container">
     ${render(html`<${Layout} data=${data} />`)}
