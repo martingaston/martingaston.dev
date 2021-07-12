@@ -45,7 +45,7 @@ exports.render = function (data) {
       <${Title} title="${capitalise(data.tag)} Posts" />
       <article class="content">
         <ul>
-          ${[...data.collections[data.tag]]
+          ${getTaggedTemplatesFromCollection(data.tag, data.collections.blog)
             .reverse()
             .map((post) => html`<${BlogPostSummary} post=${post} />`)}
         </ul>
@@ -53,3 +53,7 @@ exports.render = function (data) {
     `
   );
 };
+
+function getTaggedTemplatesFromCollection(tag, collection) {
+  return collection.filter((template) => template.data.tags.includes(tag));
+}
