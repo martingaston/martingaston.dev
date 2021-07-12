@@ -1,17 +1,17 @@
 const { html } = require("htm/preact");
 const slugify = require("slugify");
 
-const Tags = ({ tags }) => html`<section class="tags">
+const Tags = ({ tags, prefix = "/blog/tags" }) => html`<section class="tags">
   <ul class="tags--list">
     ${tags
       .filter((tag) => tag != "blog")
-      .map((tag) => html`<${Tag} tag=${tag} />`)}
+      .map((tag) => html`<${Tag} tag=${tag} prefix=${prefix} />`)}
   </ul>
 </section>`;
 
-const Tag = ({ tag }) =>
+const Tag = ({ tag, prefix }) =>
   html`<li class="tags--list-item">
-    <a href="/blog/tags/${slugify(tag)}">${tag}</a>
+    <a href="${prefix}/${slugify(tag)}">${tag}</a>
   </li>`;
 
 module.exports = { Tags };
