@@ -22,6 +22,10 @@ module.exports = function (eleventyConfig) {
     excerpt_separator: "<!-- excerpt -->",
   });
 
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md");
+  });
+
   return {
     dir: {
       input: "src",
