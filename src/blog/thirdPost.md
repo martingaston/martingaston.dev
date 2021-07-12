@@ -1,6 +1,6 @@
 ---
 title: "Keeping The Blog Dream Alive"
-tags: ["blog", "content", "padding"]
+tags: ["content", "padding"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit porttitor pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean nec venenatis velit, sit amet egestas ante. Nunc commodo tortor a leo malesuada elementum. Maecenas a felis ullamcorper, fermentum ex consectetur, convallis nisl. Integer faucibus risus eu justo hendrerit, quis pharetra neque vehicula. Phasellus pellentesque in ex ac eleifend. Nullam ullamcorper tempor arcu non suscipit. Vestibulum imperdiet non lacus ac pharetra. Pellentesque sit amet rutrum magna. Praesent iaculis, quam at blandit suscipit, dui nulla hendrerit justo, eu tempus lectus ante et ipsum. Integer euismod, lectus vel pulvinar sollicitudin, purus magna accumsan justo, at ultrices justo arcu vel nunc. Donec mattis varius volutpat. Pellentesque malesuada viverra lacinia. Aliquam consectetur est nulla, vitae semper ex finibus non. Sed in risus quis tellus mattis fermentum.
