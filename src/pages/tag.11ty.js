@@ -7,10 +7,10 @@ const { Title } = require("../components/Title");
 exports.data = {
   layout: "base",
   pagination: {
-    data: "collections",
+    data: "collections.blog",
     size: 1,
     alias: "tag",
-    filter: ["blog", "nav", "all"],
+    before: getUniqueTagsFromCollection,
   },
   permalink: function (data) {
     return `blog/tags/${this.slug(data.tag)}/`;
@@ -19,6 +19,18 @@ exports.data = {
     title: ({ tag }) => capitalise(tag),
   },
 };
+
+function getUniqueTagsFromCollection(data) {
+  const uniqueTags = new Set();
+
+  for (let template of data) {
+    for (let tag of template.data.tags) {
+      uniqueTags.add(tag);
+    }
+  }
+
+  return [...uniqueTags];
+}
 
 function capitalise(string) {
   return string
