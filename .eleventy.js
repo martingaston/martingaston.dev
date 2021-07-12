@@ -26,6 +26,10 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/blog/*.md");
   });
 
+  eleventyConfig.addCollection("links", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/links/*.md");
+  });
+
   return {
     dir: {
       input: "src",
