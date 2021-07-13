@@ -17,7 +17,7 @@ exports.render = function (data) {
     html`<${Title} title="Links" />
       <article class="content">
         <ol class="postlist">
-          ${[...data.collections.links]
+          ${[...data.collections.links.all]
             .reverse()
             .map((link) => html`<${LinkItem} link=${link} />`)}
         </ol>

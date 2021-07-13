@@ -10,7 +10,6 @@ exports.data = {
     data: "collections.blog",
     size: 1,
     alias: "tag",
-    before: getUniqueTagsFromCollection,
   },
   permalink: function (data) {
     return `blog/tags/${this.slug(data.tag)}/`;
@@ -19,18 +18,6 @@ exports.data = {
     title: ({ tag }) => capitalise(tag),
   },
 };
-
-function getUniqueTagsFromCollection(data) {
-  const uniqueTags = new Set();
-
-  for (let template of data) {
-    for (let tag of template.data.tags) {
-      uniqueTags.add(tag);
-    }
-  }
-
-  return [...uniqueTags];
-}
 
 function capitalise(string) {
   return string
@@ -45,7 +32,7 @@ exports.render = function (data) {
       <${Title} title="${capitalise(data.tag)} Posts" />
       <article class="content">
         <ul>
-          ${getTaggedTemplatesFromCollection(data.tag, data.collections.blog)
+          ${[...data.collections.blog[data.tag]]
             .reverse()
             .map((post) => html`<${BlogPostSummary} post=${post} />`)}
         </ul>
@@ -53,7 +40,3 @@ exports.render = function (data) {
     `
   );
 };
-
-function getTaggedTemplatesFromCollection(tag, collection) {
-  return collection.filter((template) => template.data.tags.includes(tag));
-}
