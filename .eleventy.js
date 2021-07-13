@@ -23,23 +23,23 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("blog", function (collectionApi) {
-    const blog = collectionApi.getFilteredByGlob("src/blog/*.md");
+    const blog = collectionApi.getFilteredByGlob("content/blog/*.md");
 
     return orderCollectionIntoTags(blog);
   });
 
   eleventyConfig.addCollection("links", function (collectionApi) {
-    const links = collectionApi.getFilteredByGlob("src/links/*.md");
+    const links = collectionApi.getFilteredByGlob("content/links/*.md");
 
     return orderCollectionIntoTags(links);
   });
 
   return {
     dir: {
-      input: "src",
+      input: ".",
       output: "dist",
-      layouts: "layouts",
-      data: "data",
+      layouts: "src/layouts",
+      data: "src/data",
     },
   };
 };
