@@ -31,7 +31,7 @@ exports.render = function (data) {
     html`
       <${Title} title="${capitalise(data.tag)} Links" />
       <article class="content">
-        <ul>
+        <ul class="postlist">
           ${[...data.collections.links[data.tag]]
             .reverse()
             .map((link) => html`<${LinkItem} link=${link} />`)}
