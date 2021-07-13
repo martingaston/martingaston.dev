@@ -1,18 +1,18 @@
 const { html } = require("htm/preact");
 const { render } = require("preact-render-to-string");
-const { BlogPostSummary } = require("../components/BlogPostSummary");
 
 const { Title } = require("../components/Title");
+const { LinkItem } = require("../components/LinkItem");
 
 exports.data = {
   layout: "base",
   pagination: {
-    data: "collections.blog",
+    data: "collections.links",
     size: 1,
     alias: "tag",
   },
   permalink: function (data) {
-    return `blog/tags/${this.slug(data.tag)}/`;
+    return `links/tags/${this.slug(data.tag)}/`;
   },
   eleventyComputed: {
     title: ({ tag }) => capitalise(tag),
@@ -29,12 +29,12 @@ function capitalise(string) {
 exports.render = function (data) {
   return render(
     html`
-      <${Title} title="${capitalise(data.tag)} Posts" />
+      <${Title} title="${capitalise(data.tag)} Links" />
       <article class="content">
         <ul class="postlist">
-          ${[...data.collections.blog[data.tag]]
+          ${[...data.collections.links[data.tag]]
             .reverse()
-            .map((post) => html`<${BlogPostSummary} post=${post} />`)}
+            .map((link) => html`<${LinkItem} link=${link} />`)}
         </ul>
       </article>
     `

@@ -11,7 +11,7 @@ exports.data = {
 };
 
 const getLatestPosts = (data, numberOfPosts = 5) =>
-  [...data.collections.blog]
+  [...data.collections.blog.all]
     .reverse()
     .filter((post) => post.data.page.url != data.page.url)
     .slice(0, numberOfPosts);

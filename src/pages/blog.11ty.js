@@ -17,7 +17,7 @@ exports.render = function (data) {
     html`<${Title} title="Blog" />
       <article class="content">
         <ol class="postlist">
-          ${[...data.collections.blog]
+          ${[...data.collections.blog.all]
             .reverse()
             .map((post) => html`<${BlogPostSummary} post=${post} />`)}
         </ol>

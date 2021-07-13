@@ -23,7 +23,15 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("blog", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md");
+    const blog = collectionApi.getFilteredByGlob("src/blog/*.md");
+
+    return orderCollectionIntoTags(blog);
+  });
+
+  eleventyConfig.addCollection("links", function (collectionApi) {
+    const links = collectionApi.getFilteredByGlob("src/links/*.md");
+
+    return orderCollectionIntoTags(links);
   });
 
   return {
@@ -35,3 +43,23 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
+function orderCollectionIntoTags(collection) {
+  tags = {
+    all: [],
+  };
+
+  for (let template of collection) {
+    tags["all"].push(template);
+
+    for (let tag of template.data.tags) {
+      if (tags.hasOwnProperty(tag)) {
+        tags[tag].push(template);
+      } else {
+        tags[tag] = [template];
+      }
+    }
+  }
+
+  return tags;
+}
